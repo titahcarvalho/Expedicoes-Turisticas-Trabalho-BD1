@@ -14,7 +14,7 @@ O sistema deverá permitir que o viajante:
 - **RF04 — Gerenciar hospedagens:** cadastrar informações sobre hospedagens utilizadas ou planejadas.
 - **RF05 — Gerenciar despesas:** registrar gastos e acompanhar o orçamento de cada viagem.
 - **RF06 — Gerenciar transportes:** cadastrar informações sobre voos, ônibus e outros meios de transporte.
-- **RF07 — Gerenciar roteiros diários:** organizar as atividades previstas para cada dia da viagem.
+
 
 Regras de negócio estabelecem as condições que o sistema precisa respeitar.
 
@@ -24,13 +24,16 @@ Por exemplo, no nosso sistema de viagens:
 
 ## 3. Regras de Negócio
 
-- RN01 — A data de término de uma viagem não pode ser anterior à data de início.
-- RN02 — Uma viagem pode ser cadastrada sem destinos definidos inicialmente, permitindo que o viajante adicione um ou vários destinos posteriormente.
-- RN03 — Uma viagem não pode possuir dois passeios cadastrados com a mesma data e o mesmo horário de início.
-- RN04 — O sistema deve permitir o registro de despesas que ultrapassem o orçamento planejado da viagem, exibindo um aviso quando o valor total das despesas exceder esse orçamento.
-- RN05 — As datas de entrada e saída de uma hospedagem devem estar dentro do período da viagem à qual ela pertence, sendo a data de saída posterior à data de entrada.
-- RN06 — As datas e os horários de partida e chegada dos transportes cadastrados devem estar dentro do período da viagem à qual pertencem, sendo a chegada posterior à partida.
-- RN07 — Um passeio somente poderá ser associado a um destino que faça parte da viagem à qual o passeio pertence.
-- RN08 — Uma hospedagem somente poderá ser associada a um destino que faça parte da viagem à qual ela pertence.
-- RN09 — A data de um roteiro diário deve estar dentro do período da viagem à qual ele pertence.
-- RN10 — Um passeio associado a um roteiro diário deve pertencer à mesma viagem e possuir a mesma data do roteiro.
+RN01 — Período da viagem: A data de término de uma viagem deve ser igual ou posterior à data de início.
+
+RN02 — Destinos da viagem: Uma viagem deve ser cadastrada com destinos definidos, permitindo a inclusão de um ou vários destinos posteriormente.
+
+RN03 — Agendamento de passeios: Uma viagem não pode possuir dois passeios com a mesma data e horário de início.
+
+RN04 — Controle de orçamento: O sistema deve permitir despesas que ultrapassem o orçamento planejado, exibindo um aviso quando o total de gastos exceder esse valor.
+
+RN05 — Período de hospedagem e transporte: As datas de hospedagem e os horários de transporte devem respeitar o período da viagem. A saída da hospedagem deve ser posterior à entrada, e a chegada do transporte deve ocorrer após a partida.
+
+RN06 — Associação de passeios e hospedagens: Passeios e hospedagens somente podem ser associados a destinos que façam parte da viagem correspondente. (Hospedagem na Rússia, viagem para o Japão)
+
+RN07 — Período dos passeios: Os passeios devem ocorrer dentro do período da viagem à qual pertencem.
